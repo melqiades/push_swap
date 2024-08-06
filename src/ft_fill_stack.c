@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:23:28 by melquiade         #+#    #+#             */
-/*   Updated: 2024/07/28 22:06:46 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/05 16:17:04 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ node_t *ft_fill_stack(char **argv)
 	while(argv[i + 1])
 	{
 		current->val = ft_atoi(argv[i]);
-		printf("value is in string %s\n", argv[i]);
 		current->next = (node_t *) malloc(sizeof(node_t));
-		printf(" current val = %d\n head = %d\n", current->val, head->val);
 		current = current->next;
 		i++;
 		//printf(" current val = %d\n head = %d\n", current->val, head->val);
@@ -37,6 +35,53 @@ node_t *ft_fill_stack(char **argv)
 	current->next = NULL;
 	return(head);
 }
+int ft_check_arg(int argc, char *argv[])
+{
+	// int	i;
+	// int k;
+
+	// i = 1;
+	// k = 0;
+	// //printf("before while %d, argc = %d, \n", k, argc);
+	// while(argv[i])
+	// {
+	// 	while(argv[i][k])
+	// 	{
+	// 		if(ft_isdigit(argv[i][k]))
+	// 			return (1, ft_printf_e("Error\n"));
+	// 		k++;
+	// 	}
+	// 	i++;
+	// }
+	// i = 1;
+	// k = 0;
+	// while(i < argc)
+	// {
+	// 	printf("\nchecking k = %d i = %d and argv = %s\n ft_atoi_return = %d\n ", k,i, argv[i], ft_atoi(argv[i]));
+	// 	//fflush(stdout);
+	// 	if(!(ft_atoi(argv[i++])))
+	// 		return (1, ft_printf_e("Error\n"));
+	// }
+	// i = 1;
+	// k = 2;
+	// while(argv[i])
+	// {
+	// 	while(argv[k])
+	// 	{
+	// 		//printf("checking %s and %s\n", argv[i], argv[k]);
+	// 		if (!(ft_strncmp(argv[i], argv[k], 100)))
+	// 			return(1, ft_printf_e("Error\n"));
+	// 		k++;
+	// 	}
+	// 	i++;
+	// 	k = i + 1;
+	// }
+	if (ft_doubles_check(argv) || ft_digit_check(argv) || ft_check_convert(argc, argv))
+		return (1);
+	return(0);
+}
+
+
 
 int main(int argc, char * argv[])
 {
@@ -47,6 +92,11 @@ int main(int argc, char * argv[])
 	int	i;
 
 	i = 0;
+
+	if (argc < 2)
+		return (1);
+	if (ft_check_arg(argc, argv))
+		return (1);
 	res = ft_fill_stack(argv);
 	res_b = ft_fill_stack(argv);
 	head = res;
@@ -66,7 +116,7 @@ int main(int argc, char * argv[])
 		i++;
 	}
 	//ft_pa(&res, &res_b);
-	ft_rra(&res);
+	ft_rr(&res, &res_b);
 	printf("\nAFTER\n");
 	while(res && i < 50)
 	{

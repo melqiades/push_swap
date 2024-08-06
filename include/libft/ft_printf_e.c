@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                   :+:      :+:    :+:   */
+/*   ft_printf_e.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpesan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 13:50:48 by lpesan            #+#    #+#             */
-/*   Updated: 2023/09/07 14:33:12 by lpesan           ###   ########.fr       */
+/*   Created: 2024/08/05 11:06:40 by melquiade         #+#    #+#             */
+/*   Updated: 2024/08/05 11:29:36 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int arg)
+int	ft_printf_e(const char *format, ...)
 {
-	if (arg <= '9' && arg >= '0')
+	va_list	args;
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	va_start(args, format);
+	while (format[i])
 	{
-		return (0);
+		ft_putchar_fd(format[i], 2);
+		i++;
+		len++;
 	}
-	else
-	{
-		return (1);
-	}
+	return (len);
 }
-/*
-int main(void)
-{
-	char	i;
-	for(i = 0; i < 127; i++)
-	{
-		printf(" for %c result is %d\n", i, ft_isdigit(i));
-	}
-}*/

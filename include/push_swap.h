@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:29:07 by lpesan            #+#    #+#             */
-/*   Updated: 2024/07/28 22:07:39 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/05 16:15:14 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,11 @@ int	ft_ra(node_t **stack_a);
 int	ft_rb(node_t **stack_b);
 int	ft_rra(node_t **stack_a);
 int	ft_rrb(node_t **stack_b);
+int	ft_check_convert(int argc, char **argv);
+int ft_digit_check(char **argv);
+int	ft_doubles_check(char **argv);
+int	ft_ss(node_t **stack_a, node_t **stack_b);
+int	ft_rr(node_t **stack_a, node_t **stack_b);
+int	ft_rrr(node_t **stack_a, node_t **stack_b);
 
 #endif
