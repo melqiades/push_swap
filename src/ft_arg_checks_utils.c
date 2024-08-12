@@ -6,11 +6,18 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:59:35 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/09 19:24:05 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 12:01:40 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int ft_check_arg(int argc, char *argv[])
+{
+	if (ft_doubles_check(argv) || ft_digit_check(argv) || ft_check_convert(argc, argv) || argc < 2)
+		return (1);
+	return(0);
+}
 
 int	ft_doubles_check(char **argv)
 {
@@ -74,4 +81,19 @@ int	ft_check_convert(int argc, char **argv)
 		i++;
 	}
 	return(0);
+}
+
+int	ft_check_sorted(node_t *stack_a)
+{
+	int	i;
+
+	i = stack_a->val;
+	while (stack_a)
+	{
+		if (i > stack_a->val)
+			return (0);
+		i = stack_a->val;
+		stack_a = stack_a->next;
+	}
+	return (1);
 }

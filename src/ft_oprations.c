@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 19:29:11 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/09 17:13:25 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 15:40:57 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,52 +114,52 @@ int	ft_ra(node_t **stack_a)
 	return(0);
 }
 
-// int	ft_rb(node_t **stack_b)
-// {
-// 	node_t	*temp_node;
-
-// 	if (*stack_b == NULL || (*stack_b)->next == NULL)
-// 		return(0);
-
-// 	temp_node = *stack_b;
-// 	while(temp_node->next)
-// 		temp_node = temp_node->next;
-// 	temp_node->next = *stack_b;
-// 	*stack_b = (*stack_b)->next;
-// 	(temp_node)->next->next = NULL;
-// 	ft_printf("rb\n");
-// 	return(0);
-// }
-
 int	ft_rb(node_t **stack_b)
 {
-    node_t	*temp_node;
-    node_t  *first_node;
+	node_t	*temp_node;
 
-    // Check if the stack is empty or contains only one node
-    if (*stack_b == NULL || (*stack_b)->next == NULL)
-        return (0);
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return(0);
 
-    // Save the first node (current head)
-    first_node = *stack_b;
-
-    // Traverse to the last node
-    temp_node = *stack_b;
-    while (temp_node->next)
-        temp_node = temp_node->next;
-
-    // Move the first node to the end
-    temp_node->next = first_node;
-
-    // Update the head to the second node
-    *stack_b = (*stack_b)->next;
-
-    // Now, the first node (old head) should point to NULL
-    first_node->next = NULL;
-
-    ft_printf("rb\n");
-    return (0);
+	temp_node = *stack_b;
+	while(temp_node->next)
+		temp_node = temp_node->next;
+	temp_node->next = *stack_b;
+	*stack_b = (*stack_b)->next;
+	(temp_node)->next->next = NULL;
+	ft_printf("rb\n");
+	return(0);
 }
+
+// int	ft_rb(node_t **stack_b)
+// {
+//     node_t	*temp_node;
+//     node_t  *first_node;
+
+//     // Check if the stack is empty or contains only one node
+//     if (*stack_b == NULL || (*stack_b)->next == NULL)
+//         return (0);
+
+//     // Save the first node (current head)
+//     first_node = *stack_b;
+
+//     // Traverse to the last node
+//     temp_node = *stack_b;
+//     while (temp_node->next)
+//         temp_node = temp_node->next;
+
+//     // Move the first node to the end
+//     temp_node->next = first_node;
+
+//     // Update the head to the second node
+//     *stack_b = (*stack_b)->next;
+
+//     // Now, the first node (old head) should point to NULL
+//     first_node->next = NULL;
+
+//     ft_printf("rb\n");
+//     return (0);
+// }
 
 int	ft_rr(node_t **stack_a, node_t **stack_b)
 {

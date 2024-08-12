@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 21:36:33 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/09 18:51:09 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 16:28:32 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ int ft_rot_needed(node_t *stack_a, node_t *stack_b, int c)
 		if(diff < 0 && ft_abs_value(diff) < diff_min)
 		{
 			diff_min = ft_abs_value(diff);
-			turns = i;
+			turns = i + 1;
 			// printf("in if turns = %d\n", turns);
 
 		}
 		else if (diff > 0 && diff < diff_min)
 		{
 			diff_min = diff;
-			turns = i + 1;
+			turns = i;
 			// printf("in elif turns = %d\n", turns);
 		}
 		i++;
@@ -172,4 +172,28 @@ void print_stack(node_t *stack)
         stack = stack->next;
     }
     printf("\n");
+}
+
+void	ft_final_rotate (node_t **stack, int argc)
+{
+	int	lowest;
+
+	lowest = ft_min_pos(*stack, ft_min(*stack));
+	// printf("lowest %d argc %d", lowest, argc);
+	if (lowest > ((argc - 1)/2))
+	{
+		while ((argc - 1 - lowest) !=0)
+		{
+			 ft_rra(stack);
+			 lowest++;
+		}
+	}
+	else
+	{
+		while (lowest !=0)
+			{
+				ft_ra(stack);
+				lowest--;
+			}
+	}
 }

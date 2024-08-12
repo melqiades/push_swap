@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:20:31 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/12 11:21:28 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 12:01:13 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_free(node_t **lst)
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		(*lst)->nbr = 0;
+		(*lst)->val = 0;
 		free(*lst);
 		*lst = tmp;
 	}

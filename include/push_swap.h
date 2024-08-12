@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:29:07 by lpesan            #+#    #+#             */
-/*   Updated: 2024/08/09 18:49:29 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 12:08:29 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ int ft_cheapest_node(node_t *stack_a, node_t *stack_b, int nodes_in_a, int nodes
 int ft_count_rotation (node_t **stack_a, node_t **stack_b, int node, int nodes_in_a, int nodes_in_b);
 void	ft_perform_rotation(node_t **stack, int turns, int button);
 int	ft_min_pos(node_t *stack, int min);
-
+int	ft_check_sorted(node_t *stack_a);
+void	ft_free(node_t **lst);
+node_t	*ft_sort(int argc, char** argv);
+void	ft_final_rotate (node_t **stack, int argc);
+int ft_check_arg(int argc, char *argv[]);
 
 #endif

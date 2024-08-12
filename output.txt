@@ -1,0 +1,17 @@
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+ra
+ra
+pa
+pa
+pa
+pa
+pa
+rra
+
+printing stack a: 1 2 3 4 5 
