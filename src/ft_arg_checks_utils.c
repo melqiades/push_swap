@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:59:35 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/05 16:08:35 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/09 19:24:05 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_doubles_check(char **argv)
 		{
 			//printf("checking %s and %s\n", argv[i], argv[k]);
 			if (!(ft_strncmp(argv[i], argv[k], 100)))
-				return(1, ft_printf_e("Error\n"));
+				return(1, ft_printf_e("Error1\n"));
 			k++;
 		}
 		i++;
@@ -50,7 +50,7 @@ int ft_digit_check(char **argv)
 			if(ft_isdigit(argv[i][k]))
 			{
 
-				return (1, printf("Error\n"));
+				return (1, printf("Error2\n"));
 			}
 			k++;
 		}
@@ -69,8 +69,9 @@ int	ft_check_convert(int argc, char **argv)
 	{
 		//printf("\nchecking k = %d i = %d and argv = %s\n ft_atoi_return = %d\n ", k,i, argv[i], ft_atoi(argv[i]));
 		//fflush(stdout);
-		if(!(ft_atoi(argv[i++])))
+		if(!(ft_atoi(argv[i])) && (ft_strncmp(argv[i], "0", 1)))
 			return (1, ft_printf_e("Error\n"));
+		i++;
 	}
 	return(0);
 }

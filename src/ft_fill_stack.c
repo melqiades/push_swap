@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:23:28 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/05 16:17:04 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 11:27:47 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,50 +37,10 @@ node_t *ft_fill_stack(char **argv)
 }
 int ft_check_arg(int argc, char *argv[])
 {
-	// int	i;
-	// int k;
-
-	// i = 1;
-	// k = 0;
-	// //printf("before while %d, argc = %d, \n", k, argc);
-	// while(argv[i])
-	// {
-	// 	while(argv[i][k])
-	// 	{
-	// 		if(ft_isdigit(argv[i][k]))
-	// 			return (1, ft_printf_e("Error\n"));
-	// 		k++;
-	// 	}
-	// 	i++;
-	// }
-	// i = 1;
-	// k = 0;
-	// while(i < argc)
-	// {
-	// 	printf("\nchecking k = %d i = %d and argv = %s\n ft_atoi_return = %d\n ", k,i, argv[i], ft_atoi(argv[i]));
-	// 	//fflush(stdout);
-	// 	if(!(ft_atoi(argv[i++])))
-	// 		return (1, ft_printf_e("Error\n"));
-	// }
-	// i = 1;
-	// k = 2;
-	// while(argv[i])
-	// {
-	// 	while(argv[k])
-	// 	{
-	// 		//printf("checking %s and %s\n", argv[i], argv[k]);
-	// 		if (!(ft_strncmp(argv[i], argv[k], 100)))
-	// 			return(1, ft_printf_e("Error\n"));
-	// 		k++;
-	// 	}
-	// 	i++;
-	// 	k = i + 1;
-	// }
 	if (ft_doubles_check(argv) || ft_digit_check(argv) || ft_check_convert(argc, argv))
 		return (1);
 	return(0);
 }
-
 
 
 int main(int argc, char * argv[])
@@ -89,46 +49,73 @@ int main(int argc, char * argv[])
 	node_t *res_b = NULL;
 	node_t *head = NULL;
 	node_t *head_b = NULL;
+	node_t *temp = NULL;
 	int	i;
+	int node = 0;
+	int lowest;
 
 	i = 0;
+	lowest = 0;
 
 	if (argc < 2)
 		return (1);
 	if (ft_check_arg(argc, argv))
 		return (1);
 	res = ft_fill_stack(argv);
-	res_b = ft_fill_stack(argv);
+
+	int steps = 0;
+	int nbrs_in_b = 0;
+	while (res)
+	{
+		node = ft_cheapest_node(res, res_b, (argc - 1 - nbrs_in_b), nbrs_in_b);
+		// printf("cheapest node %d argc = %d\n", node, argc);
+		ft_count_rotation (&res, &res_b, node, (argc - 1 - nbrs_in_b), nbrs_in_b);
+		fflush(stdout);
+		ft_pb(&res, &res_b);
+		steps++;
+		nbrs_in_b++;
+		// printf("\nprinting stack a: ");
+		// print_stack(res);
+		// printf("printing stack b: ");
+		// print_stack(res_b);
+		fflush(stdout);
+	}
+	// printf("\nprinting stack a: ");
+	// print_stack(res);
+	// printf("printing stack b: ");
+	// print_stack(res_b);
+	while (res_b)
+	{
+		ft_pa(&res, &res_b);
+
 	head = res;
 	head_b = res_b;
-	//ft_sa(&res);
+	}
+	// printf("\nprinting stack a: ");
+	// print_stack(res);
+	lowest = ft_min_pos(res, ft_min(res)) + 1;
+	printf("lowest %d argc %d", lowest, argc);
+	if (lowest > ((argc - 1)/2))
+	{
+		while ((argc - 1 - lowest) !=0)
+		{
+			 ft_rra(&res);
+			 lowest++;
+		}
+	}
+	else
+	{
+		while (lowest !=0)
+			{
+				ft_ra(&res);
+				lowest--;
+			}
+	}
 
-	while(head && i < 50)
-	{
-		printf("\nprinting stack a %d %p",head->val,head);
-		head = head->next;
-		i++;
-	}
-	while(head_b && i < 50)
-	{
-		printf("\nprinting stack b %d",head_b->val);
-		head_b = head_b->next;
-		i++;
-	}
-	//ft_pa(&res, &res_b);
-	ft_rr(&res, &res_b);
-	printf("\nAFTER\n");
-	while(res && i < 50)
-	{
-		printf("\nprinting stack a %d %p",res->val, res);
-		res = res->next;
-		i++;
-	}
-	while(res_b && i < 50)
-	{
-		printf("\nprinting stack b %d",res_b->val);
-		res_b = res_b->next;
-		i++;
-	}
-	printf("\n");
+	printf("\nAFTER\n steps =%d\n", steps);
+	printf("\nprinting stack a: ");
+	print_stack(res);
+	printf("printing stack b: ");
+	print_stack(res_b);
+	printf("argc = %d\n", argc);
 }
