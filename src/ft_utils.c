@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 21:36:33 by melquiade         #+#    #+#             */
-/*   Updated: 2024/08/12 16:28:32 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 18:46:21 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,4 +196,15 @@ void	ft_final_rotate (node_t **stack, int argc)
 				lowest--;
 			}
 	}
+}
+
+int	ft_len(char **args)
+{
+	int	i;
+
+	i = 1;
+	while (args[i])
+		i++;
+	return(i);
+
 }

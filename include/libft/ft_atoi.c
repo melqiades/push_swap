@@ -22,7 +22,6 @@ int	ft_atoi(const char *str)
 	sig = 1;
 	res = 0;
 
-	// printf("entering atoi char = %s \n", str);
 	while ((8 < str[i] && str[i] < 14) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -36,14 +35,16 @@ int	ft_atoi(const char *str)
 		// printf("error in digit check ");
 		return (0);
 	}
+	// printf("entering atoi char INTmax = %d sig = %d res = %ld \n", INT_MAX, sig, res);
+
 	while ('0' <= str[i] && str[i] <= '9')
 	{
-		if ((sig == 1 && res > INT_MAX) || res > (long)INT_MAX + 1)
+		res = res * 10 + (str[i] - '0');
+		if ((sig == 1 && res > (long)INT_MAX) || res > (long)INT_MAX + 1)
 		{
 			// printf("error in INT check");
 			return (0);
 		}
-		res = res * 10 + (str[i] - '0');
 		i++;
 	}
 	return (sig * res);

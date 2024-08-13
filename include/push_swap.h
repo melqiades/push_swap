@@ -6,7 +6,7 @@
 /*   By: melquiade <melquiade@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:29:07 by lpesan            #+#    #+#             */
-/*   Updated: 2024/08/12 12:08:29 by melquiade        ###   ########.fr       */
+/*   Updated: 2024/08/12 18:43:20 by melquiade        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,10 @@ void	ft_free(node_t **lst);
 node_t	*ft_sort(int argc, char** argv);
 void	ft_final_rotate (node_t **stack, int argc);
 int ft_check_arg(int argc, char *argv[]);
+void	ft_small_sort(node_t **stack_a, int argc);
+void ft_sort_three(node_t **stack);
+void ft_sort_four(node_t **stack_a);
+void ft_sort_five(node_t **stack_a);
+int	ft_len(char **args);
 
 #endif
