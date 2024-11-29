@@ -105,12 +105,14 @@ The following operations are used to manipulate stacks:
 | `rrr`         | Perform `rra` and `rrb` simultaneously.           |
 ```
 
-## 📊 Evaluation
+## 📊 Evaluation  
 The program is graded on:
 
-Correctness: Properly sorting inputs.
-Efficiency: Using minimal operations for large datasets.
-Edge Cases: Handling duplicates, negative numbers, and invalid inputs gracefully.
+```text
+- **Correctness:** Properly sorting inputs.
+- **Efficiency:** Using minimal operations for large datasets.
+- **Edge Cases:** Handling duplicates, negative numbers, and invalid inputs gracefully.
+```
 
 ## 🖼️ Visualizer  
 To better understand how the sorting algorithm works, you can use the **Push Swap Visualizer** from [Push-Swap-Tester](https://github.com/gemartin99/Push-Swap-Tester), created by [gemartin99](https://github.com/gemartin99). It provides a graphical representation of the sorting process, animating each operation to help visualize how the stacks evolve during sorting.  
