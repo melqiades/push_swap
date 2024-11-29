@@ -50,16 +50,18 @@ This project is designed to test algorithmic thinking and proficiency in low-lev
    ```bash
    git clone https://github.com/username/push_swap.git
    cd push_swap
+```
 
 2. Compile the program:  
    ```bash
    make
-
+```
 ## 🚀 Usage
 Run the program with a list of integers as arguments:
 
 	```bash
 	./push_swap 4 67 3 87 23
+	```
 
 The program outputs a series of operations to sort the integers:
 
@@ -71,14 +73,14 @@ The program outputs a series of operations to sort the integers:
 	sa
 	pa
 	pa
-
+```
 ## 🔍 Example with Checker
 To verify correctness, use the provided checker program:
 
 Pipe operations into checker:
 	```bash
 	./push_swap 4 67 3 87 23 | ./checker 4 67 3 87 23
-
+```
 checker will output:
 OK if sorted correctly
 KO if the result is unsorted or invalid
