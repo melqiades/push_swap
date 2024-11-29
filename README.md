@@ -32,8 +32,7 @@ This project is designed to test algorithmic thinking and proficiency in low-lev
 ---
 
 ## ✨ Features  
-- Implements efficient sorting algorithms like **Quicksort** or **Merge Sort** tailored for stack-based sorting.  
-- Provides verbose output for debugging and understanding the sorting process.  
+- Implements efficient sorting algorithms for stack-based sorting.  
 - Complies with the constraints defined by the project guidelines at 42 School.  
 
 ---
