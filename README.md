@@ -1,111 +1,53 @@
-# 🔢 Push_swap Tester
+# Push Swap  
+![C Programming](https://img.shields.io/badge/Language-C-blue)  
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)  
+![License](https://img.shields.io/badge/License-MIT-green)  
+![Platform](https://img.shields.io/badge/Platform-Linux%20|%20macOS-lightgrey)  
 
-## This tester contains:
+A sorting algorithm project from [42 School](https://www.42.fr/). **Push Swap** is a program that sorts a stack of integers using a predefined set of operations, striving for minimal moves. This repository contains the implementation and resources for understanding the project.
 
-### 🔹 Error handling.
+---
 
-### 🔹 All the cases between 2 and 5 numbers. Check sorting and less movements than the mandatory.
+## 📋 Table of Contents  
+- [📖 Overview](#-overview)  
+- [✨ Features](#-features)  
+- [🛠 Requirements](#-requirements)  
+- [📥 Installation](#-installation)  
+- [🚀 Usage](#-usage)  
+- [📚 Operations](#-operations)  
+- [📊 Evaluation](#-evaluation)  
+- [📜 License](#-license)  
 
-### 🔹 Infinit test of 100 numbers and 500, and prints the moves that your algorithm does.
+---
 
-### 🔹 A test for each case between 1 and 500.
+## 📖 Overview  
+The **Push Swap** program takes a sequence of integers as input and outputs a series of stack operations to sort them in ascending order. This is achieved under specific constraints:  
 
-### 🔹 Test if the arguments is already sorted.
+- Only two stacks are allowed: `a` (input) and `b` (empty at the start).  
+- Only a limited set of operations can be used (e.g., `sa`, `pb`, `ra`, etc.).  
+- The goal is to achieve optimal sorting in as few operations as possible.  
 
-### 🔹 Show this min, max and average of all tests.
+This project is designed to test algorithmic thinking and proficiency in low-level programming concepts.
 
-### 🔹 Check memory leaks.
+---
 
-### 🔹 Check for the bonus.
+## ✨ Features  
+- Implements efficient sorting algorithms like **Quicksort** or **Merge Sort** tailored for stack-based sorting.  
+- Provides verbose output for debugging and understanding the sorting process.  
+- Complies with the constraints defined by the project guidelines at 42 School.  
 
-## How to use
+---
 
-The push_swap_test.sh or push_swap_test_linux.sh file and the checker_mac or checker_linux should be in the same directory where is the push_swap program. Once the terminal is open and we are in the project directory we executed this command:
+## 🛠 Requirements  
+- **Compiler:** GCC or Clang  
+- **Dependencies:** None (pure C implementation)  
+- **OS Compatibility:** Linux, macOS  
 
-If you don't have MacOS, instead of running push_swap_test.sh, execute push_swap_test_linux.sh
+---
 
-```bash push_swap_test.sh``` 
+## 📥 Installation  
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/username/push_swap.git
+   cd push_swap
 
-We also can add two arguments that will be the times that we executed the 100 and 500 tests. If you don't put arguments, it will execute 200 for each test by default.
-
-```bash push_swap_test.sh 250 250```. 
-
-<img width="540" alt="Screen Shot 2022-10-09 at 11 06 42 PM" src="https://user-images.githubusercontent.com/66915274/194779534-cf66c958-46a4-4c6f-bf2f-587af4ad8f8e.png">
-
-If you would like to execute the bonus. If you don't put arguments, it will execute 200 for each test by default. 
-
-```bash push_swap_test.sh -b```.
-
-And if you want to define the quantity for 100 and 500 tests:
-
-```bash push_swap_test.sh -b 100 100```
-
-<img width="448" alt="Screen Shot 2022-10-10 at 3 12 48 AM" src="https://user-images.githubusercontent.com/66915274/194788176-19454b9d-61b7-4921-b440-1073c3d22c50.png">
-
-### ❗️ You can check the sended arguments that makes your program fail with the traces.txt file ❗️
-
-# 👀 Pushswap visualizer 
-
-Useful tool to visualise your algorithm graphically. Program created by ![ailopez-o](https://github.com/ailopez-o).
-
-[VISUALIZER REPO](https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker)
-
-If you want to run it, type the following command. The number represents the number of arguments push_swap will receive.
-
-```bash push_swap_test.sh -v 500```
-
-<img width="597" alt="Screen Shot 2023-01-13 at 5 23 58 PM" src="https://user-images.githubusercontent.com/66915274/212369245-54455057-43d9-42c5-a916-a825ff505813.png">
-
-If you want to run the viewer with specific arguments use the following command followed by the desired arguments in double quotes.
-
-```bash push_swap_test.sh -v2 "1 4 2 3 5"```
-
-## Controls 🕹
-
-|KEY|ACTION|
-|---|---|
-|`I`| Step by Step instructions|
-|`S`| Run all the instructions|
-|`P`| Pause |
-|`1`| exec 'sa'|
-|`2`| exec 'sb'|
-|`3`| exec 'ra'|
-|`4`| exec 'rb'|
-|`5`| exec 'rra'|
-|`6`| exec 'rrb'|
-|`7`| exec 'pa'|
-|`8`| exec 'pb'|
-|`ESC ❌`|Close|
-
-Extra acknowledgements for [@nunom4chado](https://github.com/nunom4chado) for implementing a Linux version of the tester.
-
-# I hope you liked and helped! 😁
-
-# Maybe it would interest you!
-
-### - To check my progression in 42 common core ↙️
-
-[HERE](https://github.com/gemartin99/42cursus)
-
-### - My 42 intra profile ↙️
-[HERE](https://profile.intra.42.fr/users/gemartin)
-
-# Contact 📥
-
-### Contact with me if you fine some errors! That will help future students! 😁
-
-◦ Email: gemartin@student.42barcelona.com
-
-◦ Linkedin: https://www.linkedin.com/in/gemartin99/
-
-# Ailopez Contact 📬
-
-### Contact him if you find any errors in the display! It may help future students! 😁
-
-◦ Email: ailopez-@student.42barcelona.com
-
-◦ Linkedin: https://www.linkedin.com/in/aitor-lopez-de-audicana-70125b38/
-
-◦ Github: https://github.com/ailopez-o
-
-◦ His 42 intra profile: https://profile.intra.42.fr/users/ailopez-
