@@ -60,13 +60,12 @@ This project is designed to test algorithmic thinking and proficiency in low-lev
 Run the program with a list of integers as arguments:
 
 	```bash
-	./push_swap 4 67 3 87 23
+   ./push_swap 4 67 3 87 23
 	```
 
 The program outputs a series of operations to sort the integers:
 
 	```text
-
 	pb
 	ra
 	pb
