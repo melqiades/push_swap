@@ -47,32 +47,35 @@ This project is designed to test algorithmic thinking and proficiency in low-lev
 
 ## 📥 Installation  
 1. Clone this repository:  
-	```bash
+```bash
    git clone https://github.com/username/push_swap.git
    cd push_swap
-	```
+```
 
 2. Compile the program:  
-	```bash
+```bash
    make
-	```
+```
 ## 🚀 Usage
 Run the program with a list of integers as arguments:
 
-	```bash
+```bash
    ./push_swap 4 67 3 87 23
-	```
+```
 
 The program outputs a series of operations to sort the integers:
 
-	```text
-	pb
-	ra
-	pb
-	sa
-	pa
-	pa
-	```
+```text
+ra
+ra
+pb
+ra
+ra
+pb
+rra
+pa
+pa
+```
 ## 🔍 Example with Checker
 To verify correctness, use the provided checker program:
 
@@ -84,21 +87,24 @@ checker will output:
 OK if sorted correctly
 KO if the result is unsorted or invalid
 
-## 📚 Operations
+## 📚 Operations  
 The following operations are used to manipulate stacks:
 
-Operation	Description
-sa	Swap the first two elements of stack a.
-sb	Swap the first two elements of stack b.
-ss	Perform sa and sb simultaneously.
-pa	Push the top element of stack b to stack a.
-pb	Push the top element of stack a to stack b.
-ra	Rotate stack a upwards.
-rb	Rotate stack b upwards.
-rr	Perform ra and rb simultaneously.
-rra	Reverse rotate stack a.
-rrb	Reverse rotate stack b.
-rrr	Perform rra and rrb simultaneously.
+```text
+| **Operation** | **Description**                                   |
+|---------------|---------------------------------------------------|
+| `sa`          | Swap the first two elements of stack `a`.         |
+| `sb`          | Swap the first two elements of stack `b`.         |
+| `ss`          | Perform `sa` and `sb` simultaneously.             |
+| `pa`          | Push the top element of stack `b` to stack `a`.   |
+| `pb`          | Push the top element of stack `a` to stack `b`.   |
+| `ra`          | Rotate stack `a` upwards.                         |
+| `rb`          | Rotate stack `b` upwards.                         |
+| `rr`          | Perform `ra` and `rb` simultaneously.             |
+| `rra`         | Reverse rotate stack `a`.                         |
+| `rrb`         | Reverse rotate stack `b`.                         |
+| `rrr`         | Perform `rra` and `rrb` simultaneously.           |
+```
 
 ## 📊 Evaluation
 The program is graded on:
@@ -106,6 +112,9 @@ The program is graded on:
 Correctness: Properly sorting inputs.
 Efficiency: Using minimal operations for large datasets.
 Edge Cases: Handling duplicates, negative numbers, and invalid inputs gracefully.
+
+## 🖼️ Visualizer  
+To better understand how the sorting algorithm works, you can use the **Push Swap Visualizer** from [Push-Swap-Tester](https://github.com/gemartin99/Push-Swap-Tester), created by [gemartin99](https://github.com/gemartin99). It provides a graphical representation of the sorting process, animating each operation to help visualize how the stacks evolve during sorting.  
 
 ## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
