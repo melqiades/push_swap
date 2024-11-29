@@ -89,7 +89,7 @@ KO if the result is unsorted or invalid
 ## 📚 Operations  
 The following operations are used to manipulate stacks:
 
-```text
+
 | **Operation** | **Description**                                   |
 |---------------|---------------------------------------------------|
 | `sa`          | Swap the first two elements of stack `a`.         |
@@ -103,16 +103,16 @@ The following operations are used to manipulate stacks:
 | `rra`         | Reverse rotate stack `a`.                         |
 | `rrb`         | Reverse rotate stack `b`.                         |
 | `rrr`         | Perform `rra` and `rrb` simultaneously.           |
-```
+
 
 ## 📊 Evaluation  
 The program is graded on:
 
-```text
+
 - **Correctness:** Properly sorting inputs.
 - **Efficiency:** Using minimal operations for large datasets.
 - **Edge Cases:** Handling duplicates, negative numbers, and invalid inputs gracefully.
-```
+
 
 ## 🖼️ Visualizer  
 To better understand how the sorting algorithm works, you can use the **Push Swap Visualizer** from [Push-Swap-Tester](https://github.com/gemartin99/Push-Swap-Tester), created by [gemartin99](https://github.com/gemartin99). It provides a graphical representation of the sorting process, animating each operation to help visualize how the stacks evolve during sorting.  
