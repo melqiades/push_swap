@@ -58,25 +58,27 @@ This project is designed to test algorithmic thinking and proficiency in low-lev
 ## 🚀 Usage
 Run the program with a list of integers as arguments:
 
-```bash
-./push_swap 4 67 3 87 23
+	```bash
+	./push_swap 4 67 3 87 23
 
 The program outputs a series of operations to sort the integers:
 
-```text
+	```text
 
-pb
-ra
-pb
-sa
-pa
-pa
+	pb
+	ra
+	pb
+	sa
+	pa
+	pa
+
 ## 🔍 Example with Checker
 To verify correctness, use the provided checker program:
 
 Pipe operations into checker:
-```bash
-./push_swap 4 67 3 87 23 | ./checker 4 67 3 87 23
+	```bash
+	./push_swap 4 67 3 87 23 | ./checker 4 67 3 87 23
+
 checker will output:
 OK if sorted correctly
 KO if the result is unsorted or invalid
